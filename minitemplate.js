@@ -42,7 +42,7 @@ var minitemplate = (function(){
                 
                 // Property not found
                 if (lookup === undef){
-                    console.log "minitemplate: '" + path[i] + "' not found in " + tag;
+                    console.log ("minitemplate: " + path[i] + " not found in " + tag);
                     lookup = "";
                 }
                 

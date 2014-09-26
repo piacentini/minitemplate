@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-<head><title>Minitemplate</title></head>
+<head><title>miniemplate</title></head>
 
 <body>
 <h1><a href=http://github.com/piacentini/minitemplate>Minitemplate</a></h1>
@@ -12,12 +12,9 @@
     
 
 <!-- MINITEMPLATES -->
-<script type=text/template class=staticText>
-Ground Control to Major Tom.
-</script>
 
-<script type=text/template class=helloPerson>
-Hi, {{name}}. I'm Minitemplate.
+<script type=text/template id=helloPerson>
+Hi, {{name}}. I'm miniemplate.
 </script>
 
 <!-- SCRIPTING -->
@@ -30,7 +27,7 @@ Hi, {{name}}. I'm Minitemplate.
     }
 </script>
 
-<!-- Include minitemplate.js or a variant (it doesn't matter if this is at the top of document or not) -->
+<!-- Include minitemplate.js -->
 <script src=minitemplate.js></script>
 
 <!-- Then, use it -->
@@ -38,18 +35,12 @@ Hi, {{name}}. I'm Minitemplate.
     var log = "";
     
 
-    // A simple call to Tim, supplying the template as a string
+    // A simple call to minitemplate, supplying the template as a string
     log += minitemplate("Inline templates are {{desc}}.", {desc:"quick & easy"});
     
     
-    
-    // Referencing a simple text template, without data substitution
-    log += minitemplate("staticText");
-    
-
-
-    // Referencing a micro-template in the document's HTML
-    log += minitemplate("helloPerson", {name:"Bob"});
+    // Referencing a miniemplate in the document's HTML
+    log += minitemplate(document.getElementById("helloPerson").innerHTML, {name:"Bob"});
     
     
     document.getElementById("console").innerHTML = log;

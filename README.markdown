@@ -1,4 +1,4 @@
-# Minitemplate
+# miniemplate
 
 A tiny, secure JavaScript minitemplating function.
 
